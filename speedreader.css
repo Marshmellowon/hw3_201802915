@@ -1,0 +1,30 @@
+body {
+  background-color: #eaf6f6;
+}
+header {
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+  font-family: Arial;
+  margin-bottom: 10px;
+}
+div.control {
+  margin: 10px 20px;
+  width: fit-content;
+  border: thick 1px;
+  border-color: #8ebebe;
+}
+div#showtxt {
+  margin: auto;
+  text-align: center;
+  width: 80%;
+  height: 100px;
+  border: solid 2px;
+  border-color: #8ebebe;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+section#control {
+  display: flex;
+  justify-content: center;
+}
