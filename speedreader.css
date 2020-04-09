@@ -9,9 +9,10 @@ header {
   margin-bottom: 10px;
 }
 div.control {
-  margin: 10px 20px;
-  width: fit-content;
-  border: thick 1px;
+  text-align: left;
+  padding: 2px;
+  font-weight: bold;
+  border-bottom: solid 1px;
   border-color: #8ebebe;
 }
 div#showtxt {
@@ -26,5 +27,23 @@ div#showtxt {
 }
 section#control {
   display: flex;
+  margin: 10px;
+  justify-content: space-evenly;
+}
+section#input {
+  width: 85%;
+  margin: auto;
   justify-content: center;
+}
+textarea#input {
+  border: solid 1px;
+  border-color: gray;
+  width: 100%;
+  
+}
+button {
+  background-color: #ffffff;
+  border: solid 1px;
+  border-color: gray;
+  width: 70px;
 }
