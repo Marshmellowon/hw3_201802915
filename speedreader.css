@@ -30,16 +30,15 @@ section#control {
   margin: 10px;
   justify-content: space-evenly;
 }
-section#input {
+section#inputsec {
   width: 85%;
   margin: auto;
   justify-content: center;
 }
-textarea#input {
+textarea#inputtxt {
   border: solid 1px;
   border-color: gray;
   width: 100%;
-  
 }
 button {
   background-color: #ffffff;
