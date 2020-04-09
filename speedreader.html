@@ -37,24 +37,24 @@
                 Speed:
             </div>
             <div>
-                <select name="" id="">
-                    <option value="">
-
+                <select name="speedselector">
+                    <option value="1200">
+                        50wpm
                     </option>
-                    <option value="">
-
+                    <option value="200">
+                        300wpm
                     </option>
-                    <option value="">
-
+                    <option value="171" selected>
+                        350wpm
                     </option>
-                    <option value="">
-
+                    <option value="150">
+                        400wpm
                     </option>
-                    <option value="">
-
+                    <option value="133">
+                        450wpm
                     </option>
-                    <option value="">
-
+                    <option value="120">
+                        500wpm
                     </option>
                 </select>
             </div>
@@ -66,15 +66,12 @@
             </div>
             <div>
                 <form>
-                    <input type="radio">
-                    <label>Medium</label>
-                    </input>
-                    <input type="radio">
-                    <label>Big</label>
-                    </input>
-                    <input type="radio">
-                    <label>Bigger</label>
-                    </input>
+                    <input type="radio" id="Medium" name="size" value="Medium">
+                    <label for="Medium">Medium</label>
+                    <input type="radio" id="Big" name="size" value="Big">
+                    <label for="Big">Big</label>
+                    <input type="radio" id="Bigger" name="size" value="Bigger">
+                    <label for="Bigger">Bigger</label>
                 </form>
             </div>
         </nav>
