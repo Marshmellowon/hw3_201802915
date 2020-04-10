@@ -5,7 +5,8 @@
   function scriptload() {
     /* start button click */
     let sp = document.getElementById("start");
-    sp.addEventListener("click", splitword);
+    sp.addEventListene("click", showdiv);
+
     /* fontsize resize */
     let medi = document.getElementById("Medium");
     medi.addEventListener("click", medium);
@@ -26,11 +27,17 @@
     let stopclick = document.getElementById("stop");
     stopclick.addEventListener("click", begin2);
     stopclick.addEventListener("click", undo);
+    stopclick.addEventListener("click", blank);
   }
+
   /* <div>에 text 출력 */
-  function splitword() {
+  function showdiv() {
     let word = document.getElementById("inputtxt").value;
     document.getElementById("showtxt").innerHTML = word;
+  }
+  /* <div>에 txt 없애기 */
+  function blank() {
+    document.getElementById("showtxt").innerHTML = " ";
   }
   /* <div>css변경하기 */
   function medium() {
@@ -43,6 +50,7 @@
     document.getElementById("showtxt").style.fontSize = "60pt";
   }
   /* ------------------------------------------------- */
+
   /* start stop button style */
   /* start clicked */
   function begin() {
@@ -66,6 +74,5 @@
     off.style.backgroundColor = "#ffffff";
     off.disabled = false;
   }
-
   window.onload = scriptload;
 })();
