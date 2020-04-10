@@ -15,7 +15,7 @@ div.control {
   border-bottom: solid 1px;
   border-color: #8ebebe;
 }
-div#showtxt {
+nav#showtxt {
   margin: auto;
   text-align: center;
   justify-content: center;

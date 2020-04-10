@@ -5,7 +5,7 @@
   function scriptload() {
     /* start button click */
     let sp = document.getElementById("start");
-    sp.addEventListene("click", showdiv);
+    sp.addEventListener("click", showdiv);
 
     /* fontsize resize */
     let medi = document.getElementById("Medium");
@@ -19,9 +19,9 @@
     /* ------------------------------------------------- */
 
     /* start button click-->disabled */
-    let startclick = document.getElementById("start");
+    /* let startclick = document.getElementById("start");
     startclick.addEventListener("click", begin);
-    startclick.addEventListener("click", undo2);
+    startclick.addEventListener("click", undo2); */
 
     /* stop button click-->disabled */
     let stopclick = document.getElementById("stop");
@@ -33,21 +33,31 @@
   /* <div>에 text 출력 */
   function showdiv() {
     let word = document.getElementById("inputtxt").value;
-    document.getElementById("showtxt").innerHTML = word;
+    let leng = word.length;
+    console.log(word);
+    console.log(leng);
+    let a = word.split(/[ \t\n]+/); /* array */
+    let str = "";
+    for (let i = 0; i < a.length; i++) {
+      str = a[i] + " ";
+      console.log(str);
+
+      /*  document.getElementById("printxt").innerHTML = a; */
+    }
   }
   /* <div>에 txt 없애기 */
   function blank() {
-    document.getElementById("showtxt").innerHTML = " ";
+    document.getElementById("printxt").innerHTML = " ";
   }
   /* <div>css변경하기 */
   function medium() {
-    document.getElementById("showtxt").style.fontSize = "36pt";
+    document.getElementById("printxt").style.fontSize = "36pt";
   }
   function big() {
-    document.getElementById("showtxt").style.fontSize = "48pt";
+    document.getElementById("printxt").style.fontSize = "48pt";
   }
   function bigger() {
-    document.getElementById("showtxt").style.fontSize = "60pt";
+    document.getElementById("printxt").style.fontSize = "60pt";
   }
   /* ------------------------------------------------- */
 
