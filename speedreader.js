@@ -6,7 +6,8 @@
     /* start button click */
     let sp = document.getElementById("start");
     sp.addEventListener("click", showdiv);
-
+    /*     sp.addEventListener("click", timer);
+     */
     /* fontsize resize */
     let medi = document.getElementById("Medium");
     medi.addEventListener("click", medium);
@@ -19,45 +20,56 @@
     /* ------------------------------------------------- */
 
     /* start button click-->disabled */
-    /* let startclick = document.getElementById("start");
+    let startclick = document.getElementById("start");
     startclick.addEventListener("click", begin);
-    startclick.addEventListener("click", undo2); */
+    startclick.addEventListener("click", undo2);
 
     /* stop button click-->disabled */
     let stopclick = document.getElementById("stop");
     stopclick.addEventListener("click", begin2);
     stopclick.addEventListener("click", undo);
     stopclick.addEventListener("click", blank);
+    stopclick.addEventListener("click", done);
   }
 
   /* <div>에 text 출력 */
   function showdiv() {
     let word = document.getElementById("inputtxt").value;
-    let leng = word.length;
-    console.log(word);
-    console.log(leng);
-    let a = word.split(/[ \t\n]+/); /* array */
-    let str = "";
-    for (let i = 0; i < a.length; i++) {
-      str = a[i] + " ";
-      console.log(str);
+    let arr = word.split(/[ \t\n]+/); /* array */
 
-      /*  document.getElementById("printxt").innerHTML = a; */
+    let settxt = document.getElementById("showtxt");
+    let index = 0;
+    if (arr.length) {
+      begin = setInterval(function () {
+        settxt.innerHTML = arr[index++];
+      }, 171);
     }
   }
+  /*  timer(arr, "showtxt"); */
+  /*   function timer(arrs, id) {}
+   */
+
+   function speed() {
+     
+     
+   }
+  function done() {
+    clearInterval(begin);
+  }
+
   /* <div>에 txt 없애기 */
   function blank() {
-    document.getElementById("printxt").innerHTML = " ";
+    document.getElementById("showtxt").innerHTML = " ";
   }
   /* <div>css변경하기 */
   function medium() {
-    document.getElementById("printxt").style.fontSize = "36pt";
+    document.getElementById("showtxt").style.fontSize = "36pt";
   }
   function big() {
-    document.getElementById("printxt").style.fontSize = "48pt";
+    document.getElementById("showtxt").style.fontSize = "48pt";
   }
   function bigger() {
-    document.getElementById("printxt").style.fontSize = "60pt";
+    document.getElementById("showtxt").style.fontSize = "60pt";
   }
   /* ------------------------------------------------- */
 
@@ -84,5 +96,14 @@
     off.style.backgroundColor = "#ffffff";
     off.disabled = false;
   }
+  function hello() {
+    console.log(hello);
+  }
+  function timer() {
+    let num = 1000;
+    showdiv();
+    /* setInterval(showdiv, num); */
+  }
+
   window.onload = scriptload;
 })();
