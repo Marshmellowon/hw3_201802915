@@ -3,11 +3,6 @@
 (function () {
   /* web에 load */
   function scriptload() {
-    /* start button click */
-    let sp = document.getElementById("start");
-    sp.addEventListener("click", showdiv);
-    /*     sp.addEventListener("click", timer);
-     */
     /* fontsize resize */
     let medi = document.getElementById("Medium");
     medi.addEventListener("click", medium);
@@ -23,6 +18,7 @@
     let startclick = document.getElementById("start");
     startclick.addEventListener("click", begin);
     startclick.addEventListener("click", undo2);
+    startclick.addEventListener("click", showdiv);
 
     /* stop button click-->disabled */
     let stopclick = document.getElementById("stop");
@@ -30,6 +26,10 @@
     stopclick.addEventListener("click", undo);
     stopclick.addEventListener("click", blank);
     stopclick.addEventListener("click", done);
+
+    /* 속도 선택 */
+    let speedsel = document.getElementById("speedselector");
+    speedsel.addEventListener("change", speed);
   }
 
   /* <div>에 text 출력 */
@@ -37,24 +37,25 @@
     let word = document.getElementById("inputtxt").value;
     let arr = word.split(/[ \t\n]+/); /* array */
 
-    let settxt = document.getElementById("showtxt");
-    let index = 0;
+    /*  let settxt = document.getElementById("showtxt");
+    let index = 0; */
     if (arr.length) {
-      begin = setInterval(function () {
-        settxt.innerHTML = arr[index++];
-      }, 171);
+      speed(arr);
     }
   }
-  /*  timer(arr, "showtxt"); */
-  /*   function timer(arrs, id) {}
-   */
-
-   function speed() {
-     
-     
-   }
+  /* 타이머 끝 */
   function done() {
     clearInterval(begin);
+  }
+  /* 속도 선택 */
+  function speed(arrs) {
+    let sel = document.getElementById("speedselector").selectedIndex;
+    let opt = document.getElementsByTagName("option")[sel].value;
+    let settxt = document.getElementById("showtxt");
+    let index = 0;
+    begin = setInterval(function () {
+      settxt.innerHTML = arrs[index++];
+    }, opt);
   }
 
   /* <div>에 txt 없애기 */
@@ -95,14 +96,6 @@
     let off = document.getElementById("start");
     off.style.backgroundColor = "#ffffff";
     off.disabled = false;
-  }
-  function hello() {
-    console.log(hello);
-  }
-  function timer() {
-    let num = 1000;
-    showdiv();
-    /* setInterval(showdiv, num); */
   }
 
   window.onload = scriptload;
