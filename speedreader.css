@@ -1,5 +1,7 @@
 body {
   background-color: #eaf6f6;
+  vertical-align: middle;
+  text-align: center;
 }
 header {
   text-align: center;
@@ -8,6 +10,7 @@ header {
   font-family: Arial;
   margin-bottom: 10px;
 }
+/* class */
 div.control {
   text-align: left;
   padding: 2px;
@@ -15,6 +18,11 @@ div.control {
   border-bottom: solid 1px;
   border-color: #8ebebe;
 }
+img.vali {
+  width: 70px;
+}
+
+/* id */
 div#showtxt {
   margin: auto;
   text-align: center;
@@ -33,15 +41,20 @@ section#control {
   justify-content: space-evenly;
 }
 section#inputsec {
-  width: 85%;
-  margin: auto;
+  display: inline-block;
+  vertical-align: top;
+  border: none;
+  margin: 0 auto;
+}
+div#inputdiv {
   justify-content: center;
+  margin-top: 10px;
 }
 textarea#inputtxt {
-  margin-top: 10px;
+  width: 100%;
   border: solid 1px;
   border-color: gray;
-  width: 100%;
+  background-color: #ffffff;
 }
 button {
   background-color: #ffffff;
@@ -51,4 +64,10 @@ button {
 }
 button#stop {
   background-color: lightgray;
+}
+section#validator {
+  position: absolute;
+  justify-content: left;
+  bottom: 5px;
+  left: 5px;
 }

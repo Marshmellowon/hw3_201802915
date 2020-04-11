@@ -1,3 +1,15 @@
+/*
+  Name: Lee Sang Won
+  IAB 6068 Homework: Speed Reader
+  File Name: speedreader.js
+  Description: This file is javascript for speedreader.html. 
+               It can handle web page's event or style.
+  Inspector: Chrome Web Inspector
+  File's content: This file's content is  
+  Vlidation: When I checked this file with html validator, I got 'wrong' message
+             about <section> and <article>. I asked TA, TA said it can be ignored.
+             except these 'wrong', rest of it is fine.
+*/
 "use strict";
 
 (function () {
@@ -24,44 +36,42 @@
     let stopclick = document.getElementById("stop");
     stopclick.addEventListener("click", begin2);
     stopclick.addEventListener("click", undo);
-    stopclick.addEventListener("click", blank);
-    stopclick.addEventListener("click", done);
+    /*     stopclick.addEventListener("click", blank); */
+    stopclick.addEventListener("click", finish);
 
     /* 속도 선택 */
     let speedsel = document.getElementById("speedselector");
-    speedsel.addEventListener("change", speed);
+    speedsel.addEventListener("change", showdiv);
   }
 
   /* <div>에 text 출력 */
   function showdiv() {
     let word = document.getElementById("inputtxt").value;
     let arr = word.split(/[ \t\n]+/); /* array */
-
-    /*  let settxt = document.getElementById("showtxt");
-    let index = 0; */
-    if (arr.length) {
-      speed(arr);
-    }
+    speed(arr);
   }
-  /* 타이머 끝 */
-  function done() {
-    clearInterval(begin);
-  }
+  /* display declare */
+  let display;
   /* 속도 선택 */
   function speed(arrs) {
     let sel = document.getElementById("speedselector").selectedIndex;
     let opt = document.getElementsByTagName("option")[sel].value;
     let settxt = document.getElementById("showtxt");
     let index = 0;
-    begin = setInterval(function () {
-      settxt.innerHTML = arrs[index++];
-    }, opt);
+    if (display) {
+      clearInterval(display);
+    }
+    if (arrs.length) {
+      display = setInterval(function () {
+        settxt.innerHTML = arrs[index++];
+      }, opt);
+    }
+  }
+  /* 타이머 끝 */
+  function finish() {
+    clearInterval(display);
   }
 
-  /* <div>에 txt 없애기 */
-  function blank() {
-    document.getElementById("showtxt").innerHTML = " ";
-  }
   /* <div>css변경하기 */
   function medium() {
     document.getElementById("showtxt").style.fontSize = "36pt";
