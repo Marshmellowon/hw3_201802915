@@ -41,9 +41,7 @@
   /* <div>에 text 출력 */
   function showdiv() {
     let word = document.getElementById("inputtxt").value;
-    let arr = word.split(
-      /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi
-    ); /* array */
+    let arr = word.split(/[ \t\n]+/); /* array */
     speed(arr);
   }
   /* display declare */
